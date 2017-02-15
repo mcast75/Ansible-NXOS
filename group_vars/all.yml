@@ -1,0 +1,12 @@
+---
+cli:
+  host: "{{  inventory_hostname  }}"
+  username: 'admin'
+  password: 'cisco.123'
+  transport: cli
+
+conn:
+  host: "{{  inventory_hostname  }}"
+  username: 'admin'
+  password: 'cisco.123'
+  transport: nxapi

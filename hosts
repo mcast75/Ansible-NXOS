@@ -1,0 +1,12 @@
+[all:vars]
+ansible_connection= local
+gather_facts= no
+
+[spine]
+spine_lab
+
+[leaf]
+leaf1_lab
+leaf2_lab
+leaf3_lab
+leaf4_lab

@@ -1,0 +1,34 @@
+---
+
+- name: First Spine Playbook
+  hosts: spine
+
+  tasks:
+
+    - name: spine descriptions
+      nxos_interface: 
+        interface: "{{ item }}" 
+        description: "Spine Interface Configured By Ansible"
+        provider: "{{  conn  }}"
+        admin_state: up
+        
+      with_items:
+        - Ethernet1/30
+        - Ethernet1/31
+
+
+- name: First Leaf Playbook
+  hosts: leaf
+
+  tasks:
+
+    - name: leaf descriptions
+      nxos_interface: 
+        interface: "{{ item }}" 
+        provider: "{{  conn  }}"
+        description: 'Leaf Interface Configured By Ansible'
+        admin_state: 'up'
+        
+      with_items:
+        - Ethernet1/25
+        - Ethernet1/26

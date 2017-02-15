@@ -1,0 +1,16 @@
+---
+
+- name: Enable NXAPI on the nexus devices
+  hosts: spine, leaf
+
+  tasks:
+
+    - name: enable_nxapi
+      nxos_nxapi: 
+        enable_http: true
+        http_port: 80
+        https: yes
+        https_port: 443
+        enable_sandbox: yes
+        provider: "{{ cli }}"
+
